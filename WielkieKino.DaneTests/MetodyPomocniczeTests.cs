@@ -1,12 +1,13 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WielkieKino.Dane;
+using WielkieKino.Lib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WielkieKino.Dane.Tests
+namespace WielkieKino.Dane
 {
     [TestClass()]
     public class MetodyPomocniczeTests
@@ -14,12 +15,22 @@ namespace WielkieKino.Dane.Tests
         [TestMethod()]
         public void CzyMoznaKupicBiletTest()
         {
-            Assert.Fail();
+            //Given
+            int rzad = 8;
+            int miejsce = 9;
+            bool wynik = false;
+
+            //When
+               wynik = MetodyPomocnicze.CzyMoznaKupicBilet(SkladDanych.Bilety, SkladDanych.Seanse[0], rzad, miejsce);
+
+            //Then
+            Assert.IsTrue(wynik);
         }
 
         [TestMethod()]
         public void CzyMoznaDodacSeansTest()
         {
+
             Assert.Fail();
         }
 

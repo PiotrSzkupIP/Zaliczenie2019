@@ -20,9 +20,32 @@ namespace WielkieKino.Dane
         /// <param name="rzad"></param>
         /// <param name="miejsce"></param>
         /// <returns></returns>
-        public bool CzyMoznaKupicBilet(List<Bilet> sprzedaneBilety, Seans seans, int rzad, int miejsce)
+        /// 
+        public static bool CzyMoznaKupicBilet(List<Bilet> sprzedaneBilety, Seans seans, int rzad, int miejsce)
         {
-            return false;
+
+            bool CzyJestMiejsce = false;
+
+            foreach (Bilet bilet in sprzedaneBilety)
+            {
+                if (bilet.Seans == seans)
+                {
+                    if (bilet.Miejsce == miejsce)
+                    {
+                        if (bilet.Rzad == rzad)
+                        {
+                            CzyJestMiejsce = false;
+                        }
+                        else
+                        {
+                            CzyJestMiejsce = true;
+                            // instrukcja do przerwania pętli 
+                        }
+                    }
+                }
+            }
+
+            return CzyJestMiejsce;
         }
 
         /// <summary>
@@ -36,9 +59,28 @@ namespace WielkieKino.Dane
         /// <returns></returns>
         public bool CzyMoznaDodacSeans(List<Seans> aktualneSeanse, Sala sala, Film film, DateTime data)
         {
+            bool CzyMiejsce = true;
+
+            foreach (Seans seans in aktualneSeanse)
+            {
+                if (seans.Date == data)
+                {
+                    if (seans.Film == film)
+                    {
+                        if (seans.Sala == sala)
+                        {
+                            CzyMiejsce = false;
+                        }
+                        else
+                        {
+                            CzyMiejsce = true;
+                        }
+                    }
+                }
+            }
             // np. nie można zagrać filmu "Egzamin" w sali Kameralnej 2019-01-20 o 17:00
             // można natomiast zagrać "Egzamin" w tej sali 2019-01-20 o 14:00
-            return false;
+            return CzyMiejsce;
         }
 
         /// <summary>
@@ -49,14 +91,32 @@ namespace WielkieKino.Dane
         /// <returns></returns>
         public int LiczbaWolnychMiejscWSali(List<Bilet> sprzedaneBilety, Seans seansDoSprawdzenia)
         {
+            int LiczbaSprzedanychBiletów = 0;
+            int LiczbaWolnychMiejsc = 0;
+
+            foreach (Bilet bilet in sprzedaneBilety)
+            {
+                if (bilet.Seans == seansDoSprawdzenia)
+                {
+                    LiczbaSprzedanychBiletów += 1;
+                }
+            }
+
+            LiczbaWolnychMiejsc = (seansDoSprawdzenia.Sala.LiczbaMiejscWRzedzie * seansDoSprawdzenia.Sala.LiczbaRzedow) - LiczbaSprzedanychBiletów;
             // Właściwa odpowiedź: np. na pierwszy seans z listy seansów w klasie SkladDanych są 72 miejsca
-            return 0;
+            return LiczbaWolnychMiejsc;
         }
 
         public double CalkowitePrzychodyZBiletow(List<Bilet> sprzedaneBilety)
         {
+            double SumaPrzychoduZBiletów = 0;
+
+            foreach (Bilet bilet in sprzedaneBilety)
+            {
+                SumaPrzychoduZBiletów += bilet.Cena;
+            }
             // Właściwa odpowiedź: 400.00
-            return 0.0;
+            return SumaPrzychoduZBiletów;
         }
     }
 }

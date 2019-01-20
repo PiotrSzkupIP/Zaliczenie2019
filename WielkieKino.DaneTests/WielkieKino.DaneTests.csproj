@@ -63,9 +63,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WielkieKino.App\WielkieKino.App.csproj">
+      <Project>{b61cdd01-7c41-45a5-b460-2fb06efb442b}</Project>
+      <Name>WielkieKino.App</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WielkieKino.Dane\WielkieKino.Dane.csproj">
       <Project>{BEE3161F-C21F-4FCC-B73C-8146F7D207E8}</Project>
       <Name>WielkieKino.Dane</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WielkieKino.Lib\WielkieKino.Lib.csproj">
+      <Project>{fcb35363-bfe5-4984-8448-175c9ce54c8c}</Project>
+      <Name>WielkieKino.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WielkieKino.Logic\WielkieKino.Logic.csproj">
+      <Project>{e0232d1f-a35e-4459-8bd9-4827d38f2b2e}</Project>
+      <Name>WielkieKino.Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
