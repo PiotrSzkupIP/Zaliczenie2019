@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WielkieKino.Lib
+namespace WielkieKino.App
 {
     public class Film
     {

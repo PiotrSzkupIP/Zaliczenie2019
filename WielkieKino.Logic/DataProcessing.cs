@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WielkieKino.Lib;
 
-namespace WielkieKino.Logic
+
+namespace WielkieKino.App
 {
     /// <summary>
     /// Metody do napisania z wykorzystaniem LINQ (w składni zapytania, wyrażeń

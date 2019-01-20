@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WielkieKino.Lib;
 
-namespace WielkieKino.Dane
+
+namespace WielkieKino.App
 {
     /// <summary>
     /// Metody do implementacji (raczej) bez wykorzystania LINQ

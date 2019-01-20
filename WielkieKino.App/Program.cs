@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WielkieKino.Lib;
+
 
 namespace WielkieKino.App
 {
@@ -36,7 +36,8 @@ namespace WielkieKino.App
 
         public static void Main(string[] args)
         {
-            WyswietlPodgladSali(Dane.SkladDanych.Bilety, Dane.SkladDanych.Seanse[0]);
+            //Oryginalnie było:  WyswietlPodgladSali(Dane.SkladDanych.Bilety, Dane.SkladDanych.Seanse[0]);
+            WyswietlPodgladSali(SkladDanych.Bilety, SkladDanych.Seanse[0]);
             /* Przykładowo:
             ----------
             ----------
